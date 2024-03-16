@@ -9,16 +9,15 @@ Future<Map<String, dynamic>> getCurrentWeather(String city, String apiKey) async
     Map<String, dynamic> weatherData = (json.decode(response.body) as Map<String, dynamic>);
     return weatherData;
   } else {
-    throw Exception('Failed to load current weather data');
+    throw Exception('Нету');
   }
 }
 
 void main() async {
   String apiKey = '761f294779317b18b184b91a14743b63';
-  String city = 'London';
+  String city = 'Uganda';
 
   Map<String, dynamic> currentWeather = await getCurrentWeather(city, apiKey);
-  print('Current Weather:');
-  print('Temperature: ${currentWeather['main']['temp'] - 273.15}°C');
-  print('Description: ${currentWeather['weather'][0]['description']}');
+  print('Текщая погода');
+  print('Температура:$city ${currentWeather['main']['temp'] - 273.15}°C');
 }
